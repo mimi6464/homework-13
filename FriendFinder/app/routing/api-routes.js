@@ -7,7 +7,7 @@
  // ===============================================================================this is just example
  
  // var tableData 		= require('../data/table-data.js');
- var friendData 	= require('../data/waitinglist-data.js');
+ var friendsData 	= require('../data/Friends');
  
  
  // ===============================================================================
@@ -26,7 +26,7 @@
  	// });
  
  	app.get('/api/friends', function (req, res) {
- 		res.json(friendData);
+ 		res.json(friendsData);
  	});
  
  	// API POST Requests
@@ -37,7 +37,7 @@
  	// Then the server saves the data to the tableData array)
  	// ---------------------------------------------------------------------------
  
- 	app.post('/api/tables', function (req, res) {
+ 	app.post('/api/friends', function (req, res) {
  	// 	// Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
  	// 	// It will do this by sending out the value "true" have a table
  	// 	if (tableData.length < 5) {
@@ -48,8 +48,8 @@
  	// 		res.json(false); // KEY LINE
  	// 	}
  	// });
- user x = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1];
- user y = [3, 2, 6, 4, 5, 1, 2, 5, 4, 1];
+ user x = [3, 3, 5, 4, 4, 5, 2, 4, 5, 5];
+ user y = [3, 2, 5, 4, 5, 1, 2, 5, 4, 1];
 
 
  function compareTwoArrays(arr1, arr2){
@@ -78,10 +78,10 @@ console.log(ans);
  
  	app.post('/api/clear', function () {
  		// Empty out the arrays of data
- 		tableData = [];
- 		waitListData = [];
+ 		friendsData = [];
+ 		
  
- 		console.log(tableData);
+ 		console.log(friendsData);
  	});
  };
-...	...
+

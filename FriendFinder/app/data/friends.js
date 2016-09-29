@@ -1,35 +1,70 @@
-var friendData = [{
+var friendsData = [{
 	    		name: "jaguars animal",
-	    		photo: "https://www.google.com/imgres?imgurl=http://yourshot.nationalgeographic.com/u/ss/fQYSUbVfts-T7pS2VP2wnKyN8wxywmXtY0-FwsgxoJZhLhqrfToTV6cQgBT27ZjBszkurRIRMNLzd_FjeYfp/&imgrefurl=http://animals.nationalgeographic.com/animals/mammals/jaguar/&h=741&w=960&tbnid=7td2QBD7pBItfM:&tbnh=155&tbnw=200&docid=5WaCx-aZJWWlXM&itg=1&usg=__lsmiRNxoSM8uH9hgzp8nQQBm8d0=",
-	    		scores:  
+	    		photo: "http://www.panorama.com.ve/__export/1466519882459/sites/panorama/img/mundo/2016/06/21/jaguar.jpg",
+	    		scores: [3, 3, 5, 4, 4, 5, 2, 5, 4, 5]
+				
 	    }, {	
-	    		name: "gitaffe",
-	    		photo: "https://www.google.com/imgres?imgurl=http://www.livescience.com/images/i/000/068/094/i300/giraffe.jpg%3F1405008442%3Finterpolation%3Dlanczos-none%26downsize%3D192:*&imgrefurl=http://www.livescience.com/27336-giraffes.html&h=288&w=192&tbnid=CiieimilXkGjRM:&tbnh=186&tbnw=124&docid=mwHgCiDw14CNeM&itg=1&usg=__TBq2dK_UtcA_XuhrYRYKHiXtdTc=",
-	    		scores:  
+	    		name: "giraffe",
+	    		photo: "http://az616578.vo.msecnd.net/files/2016/03/26/635946098822760398-1397872308_giraffe-01.jpg",
+	    		scores: [1, 2, 3, 4, 5, 1, 1, 1, 1, 2] 
 	    }, {
 	    		name: "gorilla",
-	    		photo: "https://www.google.com/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/5/50/Male_gorilla_in_SF_zoo.jpg&imgrefurl=https://en.wikipedia.org/wiki/Gorilla&h=2488&w=2228&tbnid=Ppdu2z35vlTS4M:&tbnh=186&tbnw=166&docid=PPD4hUL67Vhq1M&itg=1&usg=__JWEiBgRGEAZ5YDcr4rkRBkwU_tk=",
-	    		scores:  
+	    		photo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Male_gorilla_in_SF_zoo.jpg",
+	    		scores: [3, 2, 5, 4, 5,1, 1, 4, 5, 4] 
 	    }, {				
 	    		name: "lion",
-	    		photo: "https://www.google.com/imgres?imgurl=http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg&imgrefurl=http://www.express.co.uk/pictures/galleries/3038/Things-you-didn-t-know-about-lions-World-Lion-Day-facts-animals-pictures&h=701&w=898&tbnid=dMAiS3vuzfjhnM:&tbnh=156&tbnw=199&docid=5G2bAOi9tlIggM&itg=1&usg=__tCNHUFnWsGLyibw18fOerbLpJvI=",
-	    		scores:  
+	    		photo: "http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg",
+	    		scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
 	    }, {		
 
 	    		name: "dolphin",
-	    		photo: "https://www.google.com/search?q=lion+dolphin&espv=2&biw=1223&bih=754&tbm=isch&imgil=h8qzFEfwMhBAPM%253A%253B4Z4OwWGo-Lt3TM%253Bhttp%25253A%25252F%25252Fwww.triptopuntacana.com%25252Fproduct%25252Fextreme-dolphin-adventure%25252F&source=iu&pf=m&fir=h8qzFEfwMhBAPM%253A%252C4Z4OwWGo-Lt3TM%252C_&usg=__zwpxmfu0Ies3vpMGWayX729YwFo%3D&ved=0ahUKEwiY_aW6rLLPAhUX7WMKHY0VAGoQyjcIKQ&ei=rd3rV9jyIZfajwONq4DQBg#imgdii=h8qzFEfwMhBAPM%3A%3Bh8qzFEfwMhBAPM%3A%3BCU3k07jVv0nrAM%3A&imgrc=h8qzFEfwMhBAPM%3A",
-	    		scores:  
+	    		photo: "https://support.wwf.org.uk/templates/bamboo/images/species__dolphin-image.jpg",
+	    		scores: [2, 3, 4, 5, 1, 2, 3, 1, 5, 1] 
 	    }, {		
 
+ }];
+
+ function compareTwoArrays(arr1, arr2){
+  var result = 0;
+  
+  for(var i=0; i<arr1.length; i++){
+    if(arr1[i] !== arr2[i]){
+      if(arr1[i] > arr2[i]){
+        result += (arr1[i] - arr2[i]);
+      } else{
+        result += (arr2[i] - arr1[i]);
+      }
+    }
+  }
+  return result;
+}
 
 
 
+function findTheOne(user){
+  var scoresUnsorted = [];
+  var scoresSort = [];
+  for(var i=0; i<friendsData.length; i++) {
+    scoresSort.push(compareTwoArrays(user.scores, friendsData[i].scores));
+  }
+  
+  scoresSort.forEach(function(item){
+    scoresUnsorted.push(item);
+  });
+
+  var sorted = scoresSort.sort(function(a, b){
+    return a - b;
+  });
+
+  var theIndex = scoresUnsorted.indexOf(sorted[0]);
+
+  return friendsData[theIndex].name;
+}
 
 
 
+var ans = findTheOne(me);
 
+console.log(ans);
 
-
-
-
-    }];
+ module.exports = friendsData;
