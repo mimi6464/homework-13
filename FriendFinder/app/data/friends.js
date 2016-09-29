@@ -20,7 +20,7 @@ var friendsData = [{
 	    		name: "dolphin",
 	    		photo: "https://support.wwf.org.uk/templates/bamboo/images/species__dolphin-image.jpg",
 	    		scores: [2, 3, 4, 5, 1, 2, 3, 1, 5, 1] 
-	    }, {		
+	    }, 		
 
  }];
 
@@ -62,9 +62,10 @@ function findTheOne(user){
 }
 
 
-
 var ans = findTheOne(me);
 
 console.log(ans);
 
  module.exports = friendsData;
+}
+];

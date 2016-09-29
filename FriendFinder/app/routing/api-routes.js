@@ -7,8 +7,8 @@
  // ===============================================================================this is just example
  
  // var tableData 		= require('../data/table-data.js');
- var friendsData 	= require('../data/Friends');
- 
+ var friendsData 	= require('../data/Friends.js');
+ var storeArray   = require('../data/store.js');
  
  // ===============================================================================
  // ROUTING
