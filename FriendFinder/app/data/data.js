@@ -1,7 +1,7 @@
 var storeArray = [
 	{	
 		name: "tsion",
-		photo: "http://themadjewess.net/wp-content/uploads/2015/10/bird.jpg",
+		photo: "https://s-media-cache-ak0.pinimg.com/236x/8d/a6/cf/8da6cfe5c7116c1a03de6ddfcdb2d267.jpg",
 		scores: [
 				3,
 				3,

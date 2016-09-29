@@ -20,51 +20,39 @@ var friendsData = [{
 	    		name: "dolphin",
 	    		photo: "https://support.wwf.org.uk/templates/bamboo/images/species__dolphin-image.jpg",
 	    		scores: [2, 3, 4, 5, 1, 2, 3, 1, 5, 1] 
-	    }, 		
+	    }, {	
+
+          name: "lion",
+          photo: "http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
+     
+          name: "bird",
+          photo: "http://www.apppicker.com/upload/template/19125-img-3.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
+
+          name: "lion",
+          photo: "http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
+
+          name: "lion",
+          photo: "http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
+
+          name: "elephant",
+          photo: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
+          name: "lion",
+          photo: "http://cdn.images.express.co.uk/img/dynamic/galleries/x701/67639.jpg",
+          scores:  [1, 2, 3, 3, 3, 1, 3, 1, 2, 4]
+      }, {    
 
  }];
 
- function compareTwoArrays(arr1, arr2){
-  var result = 0;
-  
-  for(var i=0; i<arr1.length; i++){
-    if(arr1[i] !== arr2[i]){
-      if(arr1[i] > arr2[i]){
-        result += (arr1[i] - arr2[i]);
-      } else{
-        result += (arr2[i] - arr1[i]);
-      }
-    }
-  }
-  return result;
-}
-
-
-
-function findTheOne(user){
-  var scoresUnsorted = [];
-  var scoresSort = [];
-  for(var i=0; i<friendsData.length; i++) {
-    scoresSort.push(compareTwoArrays(user.scores, friendsData[i].scores));
-  }
-  
-  scoresSort.forEach(function(item){
-    scoresUnsorted.push(item);
-  });
-
-  var sorted = scoresSort.sort(function(a, b){
-    return a - b;
-  });
-
-  var theIndex = scoresUnsorted.indexOf(sorted[0]);
-
-  return friendsData[theIndex].name;
-}
-
-
-var ans = findTheOne(me);
-
-console.log(ans);
 
  module.exports = friendsData;
 }
