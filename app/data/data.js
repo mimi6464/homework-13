@@ -1,4 +1,4 @@
-var storeArray = [
+var storeArray = 
 	{	
 		name: "tsion",
 		photo: "https://s-media-cache-ak0.pinimg.com/236x/8d/a6/cf/8da6cfe5c7116c1a03de6ddfcdb2d267.jpg",
@@ -12,8 +12,8 @@ var storeArray = [
 				2,
 				4,
 				5,
-				5
+				5 ]
 	}			
-		];
+		
 			
 module.exports = storeArray;
